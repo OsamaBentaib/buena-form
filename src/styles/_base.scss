@@ -1,0 +1,32 @@
+@import url('http://fonts.googleapis.com/css?family=Raleway:400,700');
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, .container {
+  height: 100vh;
+}
+
+body {
+  background: $background-color;
+  color: $font-color;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-base;
+  font-family: $font-family-main;
+  overflow: hidden;
+  overflow-y: scroll;
+  min-height: 590px;
+}
+
+a {
+  color: $font-color-light;
+  text-decoration: none;
+  outline: none;
+  transition: color $transition-speed ease-in-out;
+
+  &:hover, &:focus {
+    color: $font-color;
+  }
+}

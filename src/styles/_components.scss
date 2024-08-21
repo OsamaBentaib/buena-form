@@ -1,0 +1,249 @@
+.fs-fields {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    top: 0;
+    list-style: none;
+  
+    > li {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      padding: 0;
+      border: none;
+  
+      &:hover {
+        z-index: 999;
+      }
+  
+      label {
+        position: relative;
+  
+        &.fs-field-label {
+          display: inline-block;
+          padding: 0 5px 1em 0;
+          font-weight: $font-weight-bold;
+          pointer-events: none;
+        }
+      }
+    }
+  
+    input {
+      display: block;
+      margin: 0;
+      padding: 0 0 0.15em;
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid $border-color;
+      background-color: transparent;
+      color: $highlight-color;
+      font-weight: bold;
+      font-size: 1.5em;
+      border-radius: 0;
+  
+      &:focus {
+        background-color: $background-color;
+        outline: none;
+      }
+  
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.1);
+      }
+  
+      &:-webkit-input-placeholder, &::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, 0.1);
+      }
+  
+      &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.1);
+      }
+  
+      &:focus::-webkit-input-placeholder {
+        color: transparent;
+      }
+  
+      &:invalid {
+        box-shadow: none;
+      }
+    }
+
+  }
+
+  .fs-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.5em;
+  }
+  
+  .fs-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+  }
+  
+  .fs-radio-custom {
+    display: flex;
+    align-items: center;
+    font-family: $font-family-main;
+    font-size: $font-size-base;
+    color: $font-color-dark;
+    cursor: pointer;
+  
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+  
+    .custom-radio {
+      position: relative;
+      height: 1em;
+      width: 1em;
+      background-color: $background-color;
+      border: 2px solid $input-border-color;
+      border-radius: 50%;
+      margin-right: 0.5em;
+      transition: background-color 0.3s, border-color 0.3s;
+  
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        width: 8px;
+        height: 8px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: $highlight-color;
+      }
+    }
+  
+    &:hover .custom-radio {
+      background-color: lighten($highlight-color, 30%);
+      border-color: $highlight-color;
+    }
+  
+    input:checked ~ .custom-radio {
+      border-color: $highlight-color;
+  
+      &:after {
+        display: block;
+      }
+    }
+  }
+  
+    
+  
+  .fs-nav-dots {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    left: auto;
+    transform: translateY(-50%);
+  
+    button {
+      position: relative;
+      display: block;
+      padding: 0;
+      margin: 16px 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: transparent;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+  
+      &::before, &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: $nav-dot-color;
+        content: '';
+        text-indent: 0;
+        backface-visibility: hidden;
+      }
+  
+      &::after {
+        background-color: $nav-dot-background;
+        transform: perspective(1000px) rotate3d(0, 1, 0, 180deg);
+      }
+  
+      &.fs-dot-current {
+        transform: perspective(1000px) rotate3d(0, 1, 0, 180deg);
+      }
+  
+      &:hover::before, &.fs-dot-current::before {
+        background: $nav-dot-color-hover;
+      }
+    }
+
+    @media (max-width: 48em) {
+      display: none;
+    }
+  }
+  
+  .fs-progress {
+    position: fixed;
+    top: 0;
+    width: 0%;
+    height: 0.5em;
+    background: $highlight-color;
+    transition: width 0.3s ease-in-out;
+    z-index: 2;
+  }
+  
+  .fs-numbers {
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    color: $font-color-dark;
+    margin: 40px;
+    width: 2em;
+    font-weight: $font-weight-bold;
+    font-size: 2em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    cursor: default;
+  
+    &:after {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      content: '/';
+      font-weight: 300;
+      opacity: 0.4;
+      left: 0;
+    }
+  
+    span {
+      float: right;
+      width: 40%;
+      text-align: center;
+  
+      &.fs-number-current {
+        float: left;
+      }
+  
+      &.fs-number-new {
+        position: absolute;
+        left: 0;
+        transform: translateY(100%);
+      }
+    }
+  }
+  
+  .fs-message-error {
+    color: $error-color;
+    font-weight: $font-weight-bold;
+    font-size: .5em;
+    transform: translate3d(-50%, -5px, 0);
+    opacity: 1;
+    margin-bottom: 1em;
+  }
+  
+
+  
+  
