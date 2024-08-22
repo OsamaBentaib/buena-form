@@ -1,5 +1,18 @@
 # React + TypeScript + Vite
 
+## Summary
+
+- I wanted to use only `scss` for this case study just so that I can build everything from scratch but I would have used `Tailwind css` 
+- I didn't want to make the structure in a different way since this is small project
+- I will use `Jest` and `testing-library` for tests (I will add them as soon as I find some time)
+
+### What would I have changed?
+
+- Usually whenever I have to use Scss I would like to use modules and import them as className in the react TSX this is why better in term of the structure and the connection of style but based in the time I have I could not do that.
+
+### Please give me your feedback:D
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
