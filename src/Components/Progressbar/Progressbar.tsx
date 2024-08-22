@@ -8,6 +8,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
 }: ProgressBarProps) => (
   <div
     className="fs-progress"
+    data-testid="progress-bar"
     style={{ width: `${progressPercentage}%` }}
   ></div>
 );

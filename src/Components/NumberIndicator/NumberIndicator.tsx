@@ -5,7 +5,7 @@ interface NumbersProps {
   totalSteps: number;
 }
 
-const FormTitle: React.FC<NumbersProps> = ({
+const NumberIndicator: React.FC<NumbersProps> = ({
   currentStep,
   totalSteps,
 }: NumbersProps) => (
@@ -15,4 +15,4 @@ const FormTitle: React.FC<NumbersProps> = ({
   </div>
 );
 
-export default FormTitle;
+export default NumberIndicator;
