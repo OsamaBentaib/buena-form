@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook
-import * as yup from "yup";
 import FormInput from "../FormInput/FormInput";
 import FormRadioGroup from "../FormRadioGroup/FormRadioGroup";
 import FormNavigation from "../FormNavigation/FormNavigation";
@@ -12,24 +11,7 @@ import NavDots from "../NavDots/NavDots";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { formatPhoneNumber } from "../../utils/utils";
 import { useFormStore } from "../../store/formStore";
-
-const validationSchemas = [
-  yup.object().shape({
-    fullName: yup.string().required("Full Name is required"),
-  }),
-  yup.object().shape({
-    email: yup
-      .string()
-      .email("Please enter a valid email address")
-      .required("Please enter an email address"),
-  }),
-  yup.object().shape({
-    phoneNumber: yup.string().required("Please enter a phone number"),
-  }),
-  yup.object().shape({
-    salary: yup.string().required("Please choose a salary range"),
-  }),
-];
+import { validationSchemas } from "../../utils/validationSchemas";
 
 const FullscreenForm: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
