@@ -36,7 +36,7 @@ const FullscreenForm: React.FC = () => {
   const { formData, setFormData } = useFormStore();
   const [error, setError] = useState("");
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const navigate = useNavigate(); // Initialize the navigate hook
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (inputRef.current) {
