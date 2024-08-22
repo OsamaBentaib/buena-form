@@ -13,6 +13,15 @@
 ### Please give me your feedback:D
 
 
+## To run project 
+
+- `npm i` 
+- `npm run dev`
+
+### for tests 
+- `npm run test` (coming soon)
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
